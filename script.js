@@ -1,10 +1,12 @@
 const horaAtualElemento =document.getElementById('hora-atual');
-function atualizarHora(params) {
+function atualizarHora() {
     const agora = new Date();
-    const hora = agora.getHours().toString().padStart(2, '0');
-    const minuto = agora.getMinutes().toString().padStart(2, '0');
-    const segundo = agora.getSeconds().toString().padStart(2, '0');
+    const horas = agora.getHours().toString().padStart(2, '0');
+    const minutos = agora.getMinutes().toString().padStart(2, '0');
+    const segundos = agora.getSeconds().toString().padStart(2, '0');
     
-    const horaFormatada = ` ${horas} : ${minutos} : ${segundos}`
+    const horaFormatada = ` ${horas} : ${minutos} : ${segundos}`;
+    horaAtualElemento.innerHTML = horaFormatada;
 }
 setInterval(atualizarHora,1000);
+atualizarHora();
